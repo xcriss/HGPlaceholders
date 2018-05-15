@@ -147,15 +147,10 @@ open class CollectionView: UICollectionView {
             return
         }
 
-        if theDataSource is PlaceholderDataSourceDelegate {
-            // Placeholder configuration
-            alwaysBounceVertical = placeholdersAlwaysBounceVertical
-            collectionViewLayout = placeholderLayout
-        } else {
-            // default configuration
-            alwaysBounceVertical = defaultAlwaysBounceVertical
-            collectionViewLayout = defaultLayout
-        }
+        // default configuration
+        alwaysBounceVertical = defaultAlwaysBounceVertical
+        collectionViewLayout = defaultLayout
+        
         dataSource = theDataSource
         delegate = theDelegate
         super.reloadData()
